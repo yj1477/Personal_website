@@ -4,15 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>尹吉网</title>
+    <style>  
+        #sidebar {  
+          display: none;  
+          width: 200px;  
+          position: fixed;  
+          height: 100%;  
+          background-color: #f5f5f5;  
+          border-right: 1px solid #ccc;  
+          overflow: auto; /* 添加滚动条 */  
+        }  
+        .menu-button {  
+            color: white;  /* 设置文字颜色为白色 */  
+            background-color: black;  /* 设置背景颜色为黑色 */  
+            border: 2px solid #000000;  /* 设置边框宽度为2px，颜色为黑色 */  
+            border-radius: 15px;  /* 设置边框圆角为15px，使其成为椭圆形 */  
+    }
+    </style> 
+ 
 </head>
-<body   background="./Image/mge_1.gif" 
+<body   background="./Image/gif/mge.gif" 
         style=" background-repeat:no-repeat;
                 background-attachment: fixed;
                 background-size:100% 100%; ">
-    <h1>欢迎来到我的网站</h1>
-    <hr>
-    <li>
-        <a href=".//interface/interface.html", target="_blank">嵌入式开发项目</a>
-    </li>
+    <button onclick="openSidebar()", class= "menu-button">菜单</button>  
+    <div id="sidebar">  
+        <ul>
+            <li>
+                <a href="/index.html">首页</a>
+            </li>
+            <li>
+                <a href=".//link/Embedded.html", target="_blank">嵌入式开发项目</a>
+            </li>
+        </ul> 
+    </div>  
+    
+    <script>  
+        function openSidebar() {  
+        var sidebar = document.getElementById('sidebar');  
+        sidebar.style.display = 'block';  
+        sidebar.addEventListener('mouseleave', function() {  
+            sidebar.style.display = 'none'; /* 当鼠标离开侧边栏时隐藏 */  
+        });  
+        }  
+    </script>  
 </body>
 </html>
