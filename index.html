@@ -4,75 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>尹吉网</title>
-    <style>  
+    <style>   
         #sidebar {  
-            display: none;  
-            width: 300px;  
-            position: fixed;  
-            height: 100%;  
-            background-color: #4d4d4d;  
-            border-right: 1px solid #ccc;  
-            border-radius: 15px;  
-            overflow: auto; /* 添加滚动条 */  
-            box-shadow: 10px 10px 5px rgb(122, 120, 120); 
-        }  
+            /* 侧边弹出窗口 */  
+            display: none;    
+            width: 300px;    
+            position: absolute;    
+            height: 100%;    
+            background-color: #4d4d4d;    
+            border-right: 1px solid #ccc;    
+            border-radius: 15px;    
+            overflow: auto; /* 添加滚动条 */    
+            box-shadow: 10px 10px 5px rgb(122, 120, 120);  
+            z-index: 1000; /* 一个非常大的值，确保侧边栏总是在其他元素之上 */  
+        }
         .menu-button {  
+            /* 按钮 */
             color: white;  /*设置文字颜色为白色   */
             background-color: black;  /* 设置背景颜色为黑色   */
             border: 2px solid #000000;  /* 设置边框宽度为2px，颜色为黑色   */
-            border-radius: 15px; /* 设置边框圆角为15px，使其成为椭圆形   */
+            border-radius: 15px;  /* 设置边框圆角为15px，使其成为椭圆形   */
+            font: italic bold 14px/1.5 'SimSun', sans-serif; /* 设定字的大小和字体 */
         }
-        .circle {  
+        .circle {   
+            /* 头像图片 */
             border-radius: 50%; /* 使元素变为圆形 */  
             width: 100px; /* 设置元素宽度 */  
             height: 100px; /* 设置元素高度 */  
             background-image: url('https://yj1477.github.io/Personal_website/Image/jpg/mge0.jpg'); 
             background-size: cover; 
-            position: absolute; 
+            position: absolute;
             top: 20px; 
             left: 100px;
         }  
-        /* 在此添加更多样式 */  
+        .header-container_1 {  
+            /* 边框的位置 */
+            width: 50px; 
+            height: 25px; 
+            position: fixed;   
+            top: 10px;  
+            left: 10px;  
+            right: 0px;  
+            background-color: #000000;  
+        }  
+        .header-container_1 h1 {  
+            /* 边框中内容的设置 */
+            text-align: center;  
+            margin-top: 10px;
+            font-size: 30px; 
+        }
     </style>  
 </head>
-<body   background="https://yj1477.github.io/Personal_website/Image/gif/meg1.gif" 
-        style=" background-repeat:no-repeat;
-                background-attachment: fixed;
-                background-size:100% 25%; ">  
-        <div style="display: flex;">  
-            <div>
-                <button onclick="openSidebar()", class= "menu-button">菜单</button>
-            </div>  
-            <div>
-                <h1 style="position: absolute; top: 25%; left: 45%;">我的网页</h1>
-            </div>  
-        </div>
-        <div id="sidebar">  
-        <div class="circle"></div> 
-        <div style="position: relative; height: 200px; width: 300px; border: 1px solid black;">  
-        <p style="position: absolute; top: 110px; left: 80px;">昵称：肥狒狒飞吠</p>
-        <ul>
-            <a href="https://yj1477.github.io/Personal_website/index.html" style="position: absolute; top: 200px; left: 20px;">
-                <li>
-                    <h3>首页</h3>
-                </li>
-            </a>  
-            <a href="https://yj1477.github.io/Personal_website/link/Embedded.html" style="position: absolute; top: 230px; left: 20px;">
-                <li>
-                    <h3>嵌入式开发项目</h3>
-                </li>
-            </a>  
-        </ul>
-        </div> 
-        <script>  
-            function openSidebar() {  
+<body> 
+    <!-- 其他元素 -->  
+    <img src="https://yj1477.github.io/Personal_website/Image/gif/meg1.gif" alt="背景图片" style="width: 100%;height: 200px;">  
+    <h1 style="position: absolute; top: 25%; left: 45%;">我的网页</h1>
+    <div class="header-container_1">
+        <button onclick="openSidebar()" class="menu-button">菜单</button>
+    </div> 
+    <div id="sidebar" onclick="openSidebar()">  
+    <!-- 侧边栏内容 -->  
+    <div class="circle"></div> <!-- 头像图片 -->
+    <div style="position: relative; height: 200px; width: 300px; border: 1px solid black;">  
+    <p style="position: absolute; top: 110px; left: 80px;">昵称：肥狒狒飞吠</p>
+    <ul>
+        <a href="https://yj1477.github.io/Personal_website/index.html" style="position: absolute; top: 200px; left: 20px;">            
+            <li>
+                <h3>首页</h3>
+            </li>
+        </a> 
+        <a href="https://yj1477.github.io/Personal_website/link/Embedded.html" style="position: absolute; top: 230px; left: 20px;">
+            <li>
+                <h3>嵌入式开发项目</h3>
+            </li> 
+        </a> 
+        
+    </ul>
+    <script>  
+        function openSidebar() {  
             var sidebar = document.getElementById('sidebar');  
-            sidebar.style.display = 'block';  
-            sidebar.addEventListener('mouseleave', function() {  
-                sidebar.style.display = 'none'; /* 当鼠标离开侧边栏时隐藏 */  
-            });  
+            if(sidebar.style.display == 'none') {  
+                sidebar.style.display = 'block';  
+            } else {  
+                sidebar.style.display = 'none';  
             }  
-        </script>  
-       
+            sidebar.addEventListener('mouseleave', function() {  
+            sidebar.style.display = 'none'; /* 当鼠标离开侧边栏时隐藏 */  
+        });
+        }  
+
+    </script>
 </body>
 </html>
