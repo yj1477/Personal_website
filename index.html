@@ -16,7 +16,8 @@
             border-radius: 15px;    
             overflow: auto; /* 添加滚动条 */    
             box-shadow: 10px 10px 5px rgb(122, 120, 120);  
-            z-index: 10000000; /* 一个非常大的值，确保侧边栏总是在其他元素之上 */  
+            z-index: 1000000; /* 一个非常大的值，确保侧边栏总是在其他元素之上 */
+  
         }
         .menu-button {  
             /* 按钮 */
@@ -24,7 +25,7 @@
             background-color: black;  /* 设置背景颜色为黑色   */
             border: 2px solid #000000;  /* 设置边框宽度为2px，颜色为黑色   */
             border-radius: 15px;  /* 设置边框圆角为15px，使其成为椭圆形   */
-            font: italic bold 14px/1.5 'SimSun', sans-serif; /* 设定字的大小和字体 */
+            font: italic bold 10px/1.5 'SimSun', sans-serif; /* 设定字的大小和字体 */
         }
         .circle {   
             /* 头像图片 */
@@ -62,24 +63,25 @@
     <div class="header-container_1">
         <button onclick="openSidebar()" class="menu-button">菜单</button>
     </div> 
-    <div id="sidebar" onclick="openSidebar()">  
-    <!-- 侧边栏内容 -->  
-    <div class="circle"></div> <!-- 头像图片 -->
-    <div style="position: relative; height: 200px; width: 300px; border: 1px solid black;">  
-    <p style="position: absolute; top: 110px; left: 80px;">昵称：肥狒狒飞吠</p>
-    <ul>
-        <a href="https://yj1477.github.io/Personal_website/index.html" style="position: absolute; top: 200px; left: 20px;">            
-            <li>
-                <h3>首页</h3>
-            </li>
-        </a> 
-        <a href="https://yj1477.github.io/Personal_website/link/Embedded.html" style="position: absolute; top: 230px; left: 20px;">
-            <li>
-                <h3>嵌入式开发项目</h3>
-            </li> 
-        </a> 
-        
-    </ul>
+    <div id="sidebar" onclick="openSidebar()", class="header-container_1">  
+        <!-- 侧边栏内容 -->  
+        <div class="circle"></div> <!-- 头像图片 -->
+        <div style="position: relative; height: 200px; width: 300px; border: 1px solid black;"></div>  
+        <p style="position: absolute; top: 110px; left: 80px;">昵称：肥狒狒飞吠</p>
+        <ul>
+            <a href="https://yj1477.github.io/Personal_website/index.html" style="position: absolute; top: 200px; left: 20px;">            
+                <li>
+                    <h3>首页</h3>
+                </li>
+            </a> 
+            <a href="https://yj1477.github.io/Personal_website/link/Embedded.html" style="position: absolute; top: 230px; left: 20px;">
+                <li>
+                    <h3>嵌入式开发项目</h3>
+                </li> 
+            </a> 
+            
+        </ul>
+    </div>
     <script>  
         function openSidebar() {  
             var sidebar = document.getElementById('sidebar');  
