@@ -37,7 +37,7 @@
             top: 20px; 
             left: 100px;
         }  
-        .header-container_1 {  
+        .header-container {  
             /* 边框的位置 */
             width: 50px; 
             height: 25px; 
@@ -46,21 +46,22 @@
             left: 10px;  
             right: 0px;  
             background-color: #000000;  
+            border-radius: 15px;
         }  
-        .header-container_1 h1 {  
+        .header-container h1 {  
             /* 边框中内容的设置 */
             text-align: center;  
             margin-top: 10px;
-            font-size: 30px; 
+            font-size: 10px; 
         }
     </style>  
 </head>
 <body> 
     <!-- 其他元素 -->  
     <div class="header-container_1">
-        <button onclick="openSidebar()" class="menu-button">菜单</button>
+        <button onclick="openSidebar()" class="menu-button header-container h1">菜单</button>
     </div> 
-    <div id="sidebar" onclick="openSidebar()", class="header-container_1">  
+    <div id="sidebar" onclick="openSidebar()", class="header-container">  
         <!-- 侧边栏内容 -->  
         <div class="circle"></div> <!-- 头像图片 -->
         <div style="position: relative; height: 200px; width: 300px; border: 1px solid black;">  
