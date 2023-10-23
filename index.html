@@ -23,12 +23,11 @@
 
         /* 按钮 */
         .menu-button {  
-        
+            /* 按钮 */
             color: white;  /*设置文字颜色为白色   */
             background-color: black;  /* 设置背景颜色为黑色   */
-            border: 2px solid #000000;  /* 设置边框宽度为2px，颜色为黑色   */
             border-radius: 15px;  /* 设置边框圆角为15px，使其成为椭圆形   */
-            font: italic bold 20px/1.5 'SimSun', sans-serif; /* 设定字的大小和字体 */
+            font: italic bold 15px/1.2 'SimSun', sans-serif; /* 设定字的大小和字体 */
         }
 
         /* 头像图片 */
@@ -50,8 +49,7 @@
             position: fixed;   
             top: 10px;  
             left: 10px;  
-            right: 0px;  
-            background-color: #000000;  
+            right: 0px;   
             border-radius: 15px;
         }  
         /* 设置悬浮边框内容的设置 */
@@ -69,15 +67,11 @@
             background-color: #f1f1f1;  
         }
         .hoverable {
-            position: absolute;  
-            width: 50%;  
-            height: 50%;  
-            top: 50%;  
-            left: 50%;  
+            position: absolute;    
             transform: translate(-50%, -50%);  
-            background-color: #333;  
+            background-color: #000000;  
             color: #fff;  
-            padding: 20px;  
+            padding: 10px;  
             border-radius: 5px;  
         }   
         .hoverable:hover {  
@@ -93,14 +87,21 @@
     
     <div class="container"> 
         <a href="https://yj1477.github.io/Personal_website/link/Car.html">
-            <div class="hoverable">  
+            <div class="hoverable" style="position: absolute; top: 50%; left: 50%;width: 50%;height: 50%;">  
                 <h2 style="position: relative; top: 10%; left: 25%;">利用STM32单片机制作一个蓝牙小车</h2>
             </div> 
         </a> 
- 
+
     </div>
+
     <div class="header-container">
-        <button onclick="openSidebar()" class="menu-button header-container h1">菜单</button>
+        <button onclick="openSidebar()" class="menu-button" >
+            <div class="hoverable" style="position: absolute; top: 50%; left: 50%;"> 
+                <div style="width: 30px; height: 30px;">
+                    菜单
+                </div>
+            </div> 
+        </button>
     </div> 
     <div id="sidebar" onclick="openSidebar()", class="header-container">  
         <!-- 侧边栏内容 -->  
