@@ -7,78 +7,81 @@
     <style>   
     
     /* 侧边弹出窗口 */  
-        #sidebar {          
-            display: none;    
-            width: 300px;    
-            position: absolute;    
-            height: 100%;    
-            background-color: #4d4d4d;    
-            border-right: 1px solid #ccc;    
-            border-radius: 15px;    
-            overflow: auto; /* 添加滚动条 */    
-            box-shadow: 10px 10px 5px rgb(122, 120, 120);  
-            z-index: 1000000; /* 一个非常大的值，确保侧边栏总是在其他元素之上 */
-  
-        }
+    #sidebar {
+    display: none;
+    width: 300px;
+    position: absolute;
+    height: 100%;
+    background-color: #4d4d4d;
+    border-right: 1px solid #ccc;
+    border-radius: 15px;
+    overflow: auto;
+    box-shadow: 10px 10px 5px rgb(122, 120, 120);
+    z-index: 1000000;
+}
 
-        /* 按钮 */
-        .menu-button {  
-            /* 按钮 */
-            color: white;  /*设置文字颜色为白色   */
-            background-color: black;  /* 设置背景颜色为黑色   */
-            border-radius: 15px;  /* 设置边框圆角为15px，使其成为椭圆形   */
-            font: italic bold 15px/1.2 'SimSun', sans-serif; /* 设定字的大小和字体 */
-        }
+/* 按钮样式 */
+.menu-button {
+    color: white;
+    background-color: black;
+    border-radius: 15px;
+    font: italic bold 15px/1.2 'SimSun', sans-serif;
+}
 
-        /* 头像图片 */
-        .circle {       
-            border-radius: 50%; /* 使元素变为圆形 */  
-            width: 100px; /* 设置元素宽度 */  
-            height: 100px; /* 设置元素高度 */  
-            background-image: url('https://yj1477.github.io/Personal_website/Image/jpg/mge0.jpg'); 
-            background-size: cover; 
-            position: absolute;
-            top: 20px; 
-            left: 100px;
-        }  
-        /* 设置菜单悬浮，不受滚轮影响*/
-        .header-container {
-            
-            width: 60px; 
-            height: 50px; 
-            position: fixed;   
-            top: 10px;  
-            left: 10px;  
-            right: 0px;   
-            border-radius: 15px;
-        }  
-        /* 设置悬浮边框内容的设置 */
-        .header-container h1 {   
+/* 头像样式 */
+.circle {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background-image: url('https://yj1477.github.io/Personal_website/Image/jpg/mge0.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 20px;
+    left: 100px;
+}
 
-            text-align: center;  
-            margin-top: 10px;
-            font-size: 10px; 
-        }
-        /* 设置某个按钮悬浮*/
-        .container {  
-            position: relative;  
-            width: 100%;  
-            height: 100px;  
-            background-color: #f1f1f1;  
-        }
-        .hoverable {
-            position: absolute;    
-            transform: translate(-50%, -50%);  
-            background-color: #000000;  
-            color: #fff;  
-            padding: 10px;  
-            border-radius: 5px;  
-        }   
-        .hoverable:hover {  
-            transform: translate(-50%, -50%) scale(1.1);  
-            transition: transform 0.3s ease;  
-        }
-    </style>  
+/* 悬浮菜单样式 */
+.header-container {
+    width: 60px;
+    height: 50px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    right: 0px;
+    border-radius: 15px;
+}
+
+/* 悬浮头部内容样式 */
+.header-container h1 {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 10px;
+}
+
+/* 可悬浮元素样式 */
+.container {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background-color: #f1f1f1;
+}
+
+/* 可悬浮按钮样式 */
+.hoverable {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-color: #000000;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* 悬浮按钮悬浮效果 */
+.hoverable:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    transition: transform 0.3s ease;
+}
+    </style>
 </head>
 <body> 
     <!-- 其他元素 -->  
@@ -130,19 +133,20 @@
             </ul>
         </div>
     </div>
-    <script>  
-        function openSidebar() {  
-            var sidebar = document.getElementById('sidebar');  
-            if(sidebar.style.display == 'none') {  
-                sidebar.style.display = 'block';  
-            } else {  
-                sidebar.style.display = 'none';  
-            }  
-            sidebar.addEventListener('mouseleave', function() {  
-            sidebar.style.display = 'none'; /* 当鼠标离开侧边栏时隐藏 */  
-        });
-        }  
+    <script>
+        var sidebar = document.getElementById('sidebar');
 
+        function openSidebar() {
+            if(sidebar.style.display == 'none') {
+                sidebar.style.display = 'block';
+            } else {
+                sidebar.style.display = 'none';
+            }
+        }
+
+        sidebar.addEventListener('mouseleave', function() {
+            sidebar.style.display = 'none'; /* 当鼠标离开侧边栏时隐藏 */
+        });
     </script>
 </body>
 </html>
